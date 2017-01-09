@@ -120,7 +120,7 @@ void LinkedList::set(index, string a, double la, double lo)		//Replaces the elem
       current -> lon = lo;
 }
 
-void remove(index)			//Removes the element at the specified index from this list.
+void LinkedList::remove(index)			//Removes the element at the specified index from this list.
 {
     current = first;
     for (int i=0; i<=index; i++)
@@ -128,7 +128,7 @@ void remove(index)			//Removes the element at the specified index from this list
     delete current;
 }
 
-Node get(index)			//Returns the element at the specified index in this list.
+Node LinkedList::get(index)			//Returns the element at the specified index in this list.
 {
     current = first;
     for (int i=0; i<=index; i++)
@@ -136,7 +136,7 @@ Node get(index)			//Returns the element at the specified index in this list.
     return &current;
 }
 
-void exchg(index1, index2)		//Switches the payload data of specified indexex.
+void LinkedList::exchg(index1, index2)		//Switches the payload data of specified indexex.
 {
     current = first;
     for (int i=0; i<=index1; i++)
@@ -161,29 +161,34 @@ void exchg(index1, index2)		//Switches the payload data of specified indexex.
     current -> lon = lo2;
 }
 
-   
+bool LinkedList::equals(list)				//Returns true if the two lists contain the same elements in the same order.
+{
+    bool boolean = true;
+    current = first;
+    list.current = list.first;
+    while (current =! NULL && list.current =! NULL){
+      
+      
+      current = current -> pNext;
+      list.current = list.current -> list.pNext;
+}
 
+void LinkedList::insert(index, value)		//Inserts the element into this list before the specified index.
+{
 
-bool equals(list)				//Returns true if the two lists contain the same elements in the same order.
+}
+
+void LinkedList::mapAll(fn)				//Calls the specified function on each element of the linkedlist in ascending index order.
 {
     
 }
 
-
-
-void insert(index, value)		//Inserts the element into this list before the specified index.
+void LinkedList::subList(start, length)	//Returns a new list containing elements from a sub-range of this list.
+{
+  
+}  
+  
+string LinkedList::toString()				//Converts the list to a printable string representation.
 {
 
 }
-
-void mapAll(fn)				//Calls the specified function on each element of the linkedlist in ascending index order.
-{
-    
-}
-
-
-// subList(start, length)	//Returns a new list containing elements from a sub-range of this list.
-
-// toString()				//Converts the list to a printable string representation.
-
-
