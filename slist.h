@@ -167,10 +167,11 @@ bool LinkedList::equals(list)				//Returns true if the two lists contain the sam
     current = first;
     list.current = list.first;
     while (current =! NULL && list.current =! NULL){
-      
-      
+      if (!(current -> airport == list.current -> airport && current -> lat == list.current -> lat && current -> lon == list.current -> lon))
+        boolean = false;
       current = current -> pNext;
-      list.current = list.current -> list.pNext;
+      list.current = list.current -> pNext;}
+    return boolean;   
 }
 
 void LinkedList::insert(index, value)		//Inserts the element into this list before the specified index.
