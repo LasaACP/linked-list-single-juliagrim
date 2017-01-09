@@ -75,10 +75,6 @@ void LinkedList::addList(string a, double la, double lo)
     }
 }
 
-void LinkedList::displayList()
-{
-     /* Add code here */
-}
 
 int LinkedList::size()	//Returns the number of elements in this list.
 {
