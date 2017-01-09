@@ -4,45 +4,14 @@ Header file for single linked list class library
 
 */
 
-    
-
-
-    equals(list)	{			//Returns true if the two lists contain the same elements in the same order.
-        
-    }
-
-    get(index)	{			//Returns the element at the specified index in this list.
-        
-    }
-
-    insert(index, value)		//Inserts the element into this list before the specified index.
-
-//exchg(index1, index2)		//Switches the payload data of specified indexex.
-
-// mapAll(fn)				//Calls the specified function on each element of the linkedlist in ascending index order.
-
-     remove(index)	{		//Removes the element at the specified index from this list.
-        Node *n = head;
-        int ret = n->x;
-
-        head = head->next;
-        delete n;
-     }
-  
-// set(index, value)		//Replaces the element at the specified index in this list with a new value.
-
-// subList(start, length)	//Returns a new list containing elements from a sub-range of this list.
-
-// toString()				//Converts the list to a printable string representation.
-  
-  
-
   class LinkedList
 {
 private:
   struct Node
   {
-    string name;
+    string airport;
+    double lat;
+    double lon;
     Node *pNext;
   };
 
@@ -63,11 +32,13 @@ LinkedList::LinkedList()
     first = NULL;
 }
 
-LinkedList::LinkedList(string nm)
+LinkedList::LinkedList(string a, double la, double lo)
 {
 
     current = first = new Node;
-    first -> name = nm;
+    first -> airport = a;
+    first -> lat = la;
+    first -> lon = lo;
     first -> pNext = NULL;
 }
 void LinkedList::Last()
@@ -79,12 +50,14 @@ void LinkedList::Last()
 
      }
 }
-void LinkedList::addList(string nm)
+void LinkedList::addList(string a, double la, double lo)
 {
   if(current == NULL)            // empty list
     {
       current = new Node;
-      current -> name = nm;
+      current -> airport = a;
+      current -> lat = la;
+      current -> lon = lo;
       current -> pNext = NULL;
       first = current;
 
@@ -94,7 +67,9 @@ void LinkedList::addList(string nm)
       Last();
       current -> pNext = new Node;
       current = current -> pNext;
-      current -> name = nm;
+      current -> airport = a;
+      current -> lat = la;
+      current -> lon = lo;
       current -> pNext = NULL;
 
     }
@@ -118,11 +93,12 @@ int LinkedList::size()	//Returns the number of elements in this list.
      }
 }
 
-void LinkedList::clear()				//Removes all elements from this list.
+void LinkedList::clear()				//Removes all elements from this list. // check
 {
     current = first;
-    for (int i==0, i<size(), i++)
-        remove(i);
+    while (current =! NULL){
+        delete current;
+        current = current -> pNext;}
 }
 
 bool LinkedList::isEmpty()				//Returns true if this list contains no elements.
@@ -132,3 +108,82 @@ bool LinkedList::isEmpty()				//Returns true if this list contains no elements.
         return true;
     return false;
 }
+
+
+void LinkedList::set(index, string a, double la, double lo)		//Replaces the element at the specified index in this list with a new value.
+{
+    current = first;
+    for (int i=0; i<=index; i++)
+        current = current -> pNext;
+      current -> airport = a;
+      current -> lat = la;
+      current -> lon = lo;
+}
+
+void remove(index)			//Removes the element at the specified index from this list.
+{
+    current = first;
+    for (int i=0; i<=index; i++)
+        current = current -> pNext;
+    delete current;
+}
+
+Node get(index)			//Returns the element at the specified index in this list.
+{
+    current = first;
+    for (int i=0; i<=index; i++)
+        current = current -> pNext;
+    return &current;
+}
+
+void exchg(index1, index2)		//Switches the payload data of specified indexex.
+{
+    current = first;
+    for (int i=0; i<=index1; i++)
+        current = current -> pNext;
+    string a1 = current -> airport;
+    double la1 = current -> lat;
+    double lo1 = current -> lon;
+    current = first;
+    for (int i=0; i<=index2; i++)
+        current = current -> pNext;
+    string a2 = current -> airport;
+    double la2 = current -> lat;
+    double lo2 = current -> lon;
+    current -> airport = a1;
+    current -> lat = la1;
+    current -> lon = lo1;
+    current = first;
+    for (int i=0; i<=index1; i++)
+        current = current -> pNext;
+    current -> airport = a2;
+    current -> lat = la2;
+    current -> lon = lo2;
+}
+
+   
+
+
+bool equals(list)				//Returns true if the two lists contain the same elements in the same order.
+{
+    
+}
+
+
+
+void insert(index, value)		//Inserts the element into this list before the specified index.
+{
+
+}
+
+void mapAll(fn)				//Calls the specified function on each element of the linkedlist in ascending index order.
+{
+    
+}
+
+
+// subList(start, length)	//Returns a new list containing elements from a sub-range of this list.
+
+// toString()				//Converts the list to a printable string representation.
+
+
