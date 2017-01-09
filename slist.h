@@ -5,9 +5,7 @@ Header file for single linked list class library
 */
 
     
-    void clear()	{				//Removes all elements from this list.
-        
-    }
+
 
     equals(list)	{			//Returns true if the two lists contain the same elements in the same order.
         
@@ -21,8 +19,6 @@ Header file for single linked list class library
 
 //exchg(index1, index2)		//Switches the payload data of specified indexex.
 
-// isEmpty()				//Returns true if this list contains no elements.
-
 // mapAll(fn)				//Calls the specified function on each element of the linkedlist in ascending index order.
 
      remove(index)	{		//Removes the element at the specified index from this list.
@@ -34,8 +30,6 @@ Header file for single linked list class library
      }
   
 // set(index, value)		//Replaces the element at the specified index in this list with a new value.
-
-
 
 // subList(start, length)	//Returns a new list containing elements from a sub-range of this list.
 
@@ -122,4 +116,19 @@ int LinkedList::size()	//Returns the number of elements in this list.
             count++;}
 
      }
+}
+
+void LinkedList::clear()				//Removes all elements from this list.
+{
+    current = first;
+    for (int i==0, i<size(), i++)
+        remove(i);
+}
+
+bool LinkedList::isEmpty()				//Returns true if this list contains no elements.
+{
+    current = first;
+    if(current == NULL)
+        return true;
+    return false;
 }
