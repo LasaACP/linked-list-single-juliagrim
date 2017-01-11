@@ -89,9 +89,11 @@ int main()
 
    // Initialize Linked List
    LinkedList llist; // = new LinkedList();
+   double distance;
    
    for (int i=0; i<=13431;i++){
-      llist.addList(airportArr[i]->code, airportArr[i]->latitude, airportArr[i]->longitude);
+      //calculate distance
+      llist.addList(airportArr[i]->code, airportArr[i]->latitude, airportArr[i]->longitude, distance);
    }
    // 
 
