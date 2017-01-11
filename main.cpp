@@ -3,13 +3,15 @@
 //  LLTemplate
 //
 //  Created by James Shockey on 12/6/16.
-//  Copyright © 2016 James Shockey. All rights reserved.
+//  Copyright Â© 2016 James Shockey. All rights reserved.
 //
 
 #include <iostream>
 #include <fstream>
 #include <cmath> 
 #include "slist.h"
+#include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -66,7 +68,6 @@ int main()
         }
         airportCount = c-1;
         infile.close();
-        
          for (int c=0; c < airportCount; c++)
             if (!(c % 1000))
             {
@@ -87,7 +88,11 @@ int main()
 
 
    // Initialize Linked List
+   LinkedList llist; // = new LinkedList();
    
+   for (int i=0; i<=13431;i++){
+      llist.addList(airportArr[i]->code, airportArr[i]->latitude, airportArr[i]->longitude);
+   }
    // 
 
     
@@ -134,6 +139,5 @@ double distanceEarth(double lat1d, double lon1d, double lat2d, double lon2d) {
 /*
 void simpleSortTotal()
 {
-
 }
 */
